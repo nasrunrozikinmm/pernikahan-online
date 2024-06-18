@@ -69,6 +69,7 @@
     <!-- App -->
     <link rel="stylesheet" href="./css/app.css" />
     <script src="./js/app.js" type="module" defer></script>
+    <script src="./js/video.js" type="module" defer></script>
   </head>
 
   <body data-key="bfb9cfea33ab7ae21a315fbd6f065a815d3e20ff2f007aa2ca" data-url="https://api.ulems.my.id/" style="overflow-y: hidden">
@@ -356,19 +357,28 @@
           <div class="card-body border rounded-5 shadow p-3">
             <h1 class="font-esthetic text-center py-3" data-aos="fade-down" data-aos-duration="1500" style="font-size: 2rem">Galeri</h1>
 
-            <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500" class="carousel slide" data-bs-ride="carousel">
+            <div id="carousel-image-one">
               <div class="video-container">
-                <iframe width="100%" height="400" src="https://drive.google.com/file/d/1S1oSbsvXu6BwhlhcXlPsfO53Mqgr_G8j/preview" autoplay></iframe>
+                <iframe
+                  id="videoIframe"
+                  class="video-iframe"
+                  width="100%"
+                  height="300"
+                  src="https://drive.google.com/file/d/1S1oSbsvXu6BwhlhcXlPsfO53Mqgr_G8j/preview?muted=1"
+                  frameborder="0"
+                  allow="autoplay; encrypted-media"
+                  allowfullscreen></iframe>
               </div>
             </div>
-            <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500" class="carousel slide" data-bs-ride="carousel">
+
+            <div id="carousel-image-two" data-aos="fade-in" data-aos-duration="2500" class="carousel slide mt-4" data-bs-ride="carousel">
               <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="5" aria-label="Slide 6"></button>
               </div>
 
               <div class="carousel-inner rounded-4">
@@ -389,36 +399,6 @@
                 </div>
                 <div class="carousel-item">
                   <img src="./assets/images/galeri/Graded-15.jpg" alt="gambar 8" class="d-block w-100" onclick="util.modal(this)" />
-                </div>
-              </div>
-
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-one" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-one" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-
-            <div id="carousel-image-two" data-aos="fade-in" data-aos-duration="2000" class="carousel slide mt-4" data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-
-              <div class="carousel-inner rounded-4">
-                <div class="carousel-item active">
-                  <img src="./assets/images/galeri/Graded-9.jpg" alt="gambar 9" class="d-block w-100" onclick="util.modal(this)" />
-                </div>
-                <div class="carousel-item">
-                  <img src="./assets/images/galeri/Graded-8.jpg" alt="gambar 11" class="d-block w-100" onclick="util.modal(this)" />
-                </div>
-                <div class="carousel-item">
-                  <img src="./assets/images/galeri/Graded-58.jpg" alt="gambar 12" class="d-block w-100" onclick="util.modal(this)" />
                 </div>
               </div>
 
@@ -574,7 +554,7 @@
         <div class="text-center">
           <h1 class="font-esthetic mb-4" style="font-size: 2.5rem">The Wedding Of</h1>
 
-          <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
+          <div class="img-crop-wcm border border-3 border-light shadow mb-4 mx-auto">
             <img src="./assets/images/Graded-33.jpg" alt="background" />
           </div>
 
@@ -630,5 +610,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha256-pQBbLkFHcP1cy0C8IhoSdxlm0CtcH5yJ2ki9jjgR03c=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.js" integrity="sha256-mvTaORw+RTgKnX6ZHT4P5Sc9DNP2TBpSGII7F3sT8iE=" crossorigin="anonymous"></script>
+   
   </body>
 </html>
