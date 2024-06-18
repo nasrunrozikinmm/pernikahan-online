@@ -89,7 +89,10 @@ export const util = (() => {
 
   const show = () => {
     guest();
-    generate();
+    const query = new URLSearchParams(window.location.search).has("generate");
+    if (query) {
+      generate();
+    }
     opacity("loading", 0.025);
     window.scrollTo(0, 0);
   };

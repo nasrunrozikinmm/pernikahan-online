@@ -1,21 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("invitationForm");
-  const invitationLinkContainer = document.getElementById("invitationLink");
-  const generatedLink = document.getElementById("generatedLink");
-  const copyButton = document.getElementById("copyButton");
   const copyMessage = document.getElementById("copyMessage");
+  const query = new URLSearchParams(window.location.search).has("generate");
+  if (query) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+      let guestName = document.getElementById("to").value.trim();
+      guestName = capitalizeFirstLetter(guestName);
 
-    let guestName = document.getElementById("to").value.trim();
-    guestName = capitalizeFirstLetter(guestName);
-
-    if (guestName) {
-      const baseUrl = "https://pernikahan-online.vercel.app/?to=";
-      const encodedName = encodeURIComponent(guestName);
-      const invitationUrl = `${baseUrl}${encodedName}`;
-      const fullMessage = `Kepada Yth. 
+      if (guestName) {
+        const baseUrl = "https://pernikahan-online.vercel.app/?to=";
+        const encodedName = encodeURIComponent(guestName);
+        const invitationUrl = `${baseUrl}${encodedName}`;
+        const fullMessage = `Kepada Yth. 
 *${guestName}*
 
 _Assalamualaikum Warahmatullahi Wabarakatuh_
@@ -32,9 +30,11 @@ Terima kasih banyak atas perhatiannya.
 
 _Wassalamualaikum Warahmatullahi Wabarakatuh_`;
 
-      copyToClipboard(fullMessage);
-    }
-  });
+        copyToClipboard(fullMessage);
+      }
+    });
+  }
+
   function capitalizeFirstLetter(name) {
     return name
       .split(" ")
